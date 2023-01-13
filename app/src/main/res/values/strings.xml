@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NoteAppCompose</string>
+    <string name="radio_title">Title</string>
+    <string name="radio_date">Date</string>
+    <string name="radio_color">Color</string>
+    <string name="radio_ascending">Ascending</string>
+    <string name="radio_descending">Descending</string>
 </resources>
