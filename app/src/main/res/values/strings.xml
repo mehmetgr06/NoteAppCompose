@@ -5,4 +5,7 @@
     <string name="radio_color">Color</string>
     <string name="radio_ascending">Ascending</string>
     <string name="radio_descending">Descending</string>
+    <string name="title_your_note">Your Note</string>
+    <string name="snackbar_delete">Note Deleted</string>
+    <string name="snackbar_undo">Undo</string>
 </resources>
