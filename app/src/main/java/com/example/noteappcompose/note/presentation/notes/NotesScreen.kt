@@ -38,6 +38,7 @@ import androidx.navigation.NavController
 import com.example.noteappcompose.R
 import com.example.noteappcompose.note.presentation.notes.components.NoteItem
 import com.example.noteappcompose.note.presentation.notes.components.OrderSection
+import com.example.noteappcompose.note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -54,7 +55,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    // todo: navigate to add_note screen
+                    navController.navigate(Screen.AddNoteScreen.route)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -77,7 +78,7 @@ fun NotesScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = stringResource(id = R.string.radio_descending),
+                    text = stringResource(id = R.string.title_your_note),
                     style = MaterialTheme.typography.h4
                 )
                 IconButton(
@@ -115,7 +116,10 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-                                //todo: navigation to detail
+                                navController.navigate(
+                                    Screen.AddNoteScreen.route +
+                                            "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
